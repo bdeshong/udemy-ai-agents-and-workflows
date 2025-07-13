@@ -28,20 +28,22 @@ def generate_x_post(topic: str) -> str:
         "input": prompt,
     }
 
-    response = request.post(
+    response = requests.post(
         "https://api.openai.com/v1/responses",
         json={},
         headers={
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {OPENAI_API_KEY}"
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
         },
     )
+
 
 def main():
     user_input = input("What should the post be about? ")
     x_post = generate_x_post(user_input)
     print("Generated X post:")
     print(x_post)
+
 
 if __name__ == "__main__":
     main()
