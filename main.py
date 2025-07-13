@@ -30,12 +30,18 @@ def generate_x_post(topic: str) -> str:
 
     response = requests.post(
         "https://api.openai.com/v1/responses",
-        json={},
+        json=payload,
         headers={
             "Content-Type": "application/json",
             "Authorization": f"Bearer {OPENAI_API_KEY}",
         },
     )
+
+    response_text = (
+        response.json().get("output", [{}])[0].get("content", "")[0].get("text", "")
+    )
+
+    return response_text
 
 
 def main():
