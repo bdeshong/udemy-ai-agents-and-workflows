@@ -21,4 +21,5 @@ dev = [
 members = [
     "agent",
     "multi-agent",
+    "crewai",
 ]
