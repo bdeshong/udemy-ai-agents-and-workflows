@@ -1,24 +1,11 @@
 [project]
-name = "udemy-ai-agents-and-workflows"
+name = "multi-agent"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "openai>=1.95.1",
-    "pypdf>=5.8.0",
     "python-dotenv>=1.1.1",
     "requests>=2.32.4",
-]
-
-[dependency-groups]
-dev = [
-    "pre-commit>=4.2.0",
-    "ruff>=0.12.3",
-]
-
-[tool.uv.workspace]
-members = [
-    "agent",
-    "multi-agent",
 ]
